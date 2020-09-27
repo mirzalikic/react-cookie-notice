@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/static/css/main.cafc69d7.chunk.css",
-    "main.js": "/static/js/main.c1658178.chunk.js",
-    "main.js.map": "/static/js/main.c1658178.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.92ee656d.js",
-    "runtime-main.js.map": "/static/js/runtime-main.92ee656d.js.map",
-    "static/js/2.d2c2c907.chunk.js": "/static/js/2.d2c2c907.chunk.js",
-    "static/js/2.d2c2c907.chunk.js.map": "/static/js/2.d2c2c907.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.f605c914b97f320107e8c1b6e31c61ae.js": "/precache-manifest.f605c914b97f320107e8c1b6e31c61ae.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/main.cafc69d7.chunk.css.map": "/static/css/main.cafc69d7.chunk.css.map",
-    "static/js/2.d2c2c907.chunk.js.LICENSE.txt": "/static/js/2.d2c2c907.chunk.js.LICENSE.txt",
-    "static/media/logo.svg": "/static/media/logo.5d5d9eef.svg"
+    "main.css": "/react-cookie-notice/static/css/main.cafc69d7.chunk.css",
+    "main.js": "/react-cookie-notice/static/js/main.3035a36d.chunk.js",
+    "main.js.map": "/react-cookie-notice/static/js/main.3035a36d.chunk.js.map",
+    "runtime-main.js": "/react-cookie-notice/static/js/runtime-main.2069790d.js",
+    "runtime-main.js.map": "/react-cookie-notice/static/js/runtime-main.2069790d.js.map",
+    "static/js/2.c2c5ab18.chunk.js": "/react-cookie-notice/static/js/2.c2c5ab18.chunk.js",
+    "static/js/2.c2c5ab18.chunk.js.map": "/react-cookie-notice/static/js/2.c2c5ab18.chunk.js.map",
+    "index.html": "/react-cookie-notice/index.html",
+    "precache-manifest.83989780ed142e96d14af7c5d77b0b8e.js": "/react-cookie-notice/precache-manifest.83989780ed142e96d14af7c5d77b0b8e.js",
+    "service-worker.js": "/react-cookie-notice/service-worker.js",
+    "static/css/main.cafc69d7.chunk.css.map": "/react-cookie-notice/static/css/main.cafc69d7.chunk.css.map",
+    "static/js/2.c2c5ab18.chunk.js.LICENSE.txt": "/react-cookie-notice/static/js/2.c2c5ab18.chunk.js.LICENSE.txt",
+    "static/media/logo.svg": "/react-cookie-notice/static/media/logo.5d5d9eef.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.92ee656d.js",
-    "static/js/2.d2c2c907.chunk.js",
+    "static/js/runtime-main.2069790d.js",
+    "static/js/2.c2c5ab18.chunk.js",
     "static/css/main.cafc69d7.chunk.css",
-    "static/js/main.c1658178.chunk.js"
+    "static/js/main.3035a36d.chunk.js"
   ]
 }
