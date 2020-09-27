@@ -1,0 +1,37 @@
+{
+    "name": "react-cookie-notice",
+    "version": "1.0.0",
+    "description": "A lightweight and customizable React component for informing users about the use of cookies on your website.",
+    "main": "./dist/index.js",
+    "scripts": {
+        "build": "webpack"
+    },
+    "keywords": [
+        "react",
+        "cookie",
+        "cookienotice",
+        "gdpr"
+    ],
+    "author": {
+        "name": "Mirza Likic",
+        "email": "mirza.likic@gmail.com"
+    },
+    "license": "MIT",
+    "dependencies": {
+        "js-cookie": "^2.2.1"
+    },
+    "peerDependencies": {
+        "react": "^16.13.1"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.11.6",
+        "@babel/preset-env": "^7.11.5",
+        "@babel/preset-react": "^7.10.4",
+        "babel-loader": "^8.1.0",
+        "css-loader": "^4.3.0",
+        "react": "^16.13.1",
+        "style-loader": "^1.2.1",
+        "webpack": "^4.44.2",
+        "webpack-cli": "^3.3.12"
+    }
+}
