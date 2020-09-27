@@ -1,5 +1,5 @@
 {
-    "name": "react-cookie-notice",
+    "name": "@mirzalikic/react-cookie-notice",
     "version": "1.0.0",
     "description": "A lightweight and customizable React component for informing users about the use of cookies on your website.",
     "main": "./dist/index.js",

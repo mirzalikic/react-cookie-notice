@@ -15,7 +15,7 @@ https://mirzalikic.github.io/react-cookie-notice/
 ## Installation
 
 ```shell
-npm install react-cookie-notice --save
+npm install @mirzalikic/react-cookie-notice --save
 ```
 
 ## Usage
@@ -23,7 +23,7 @@ npm install react-cookie-notice --save
 Import:
 
 ```js
-import CookieNotice from 'react-cookie-notice';
+import CookieNotice from '@mirzalikic/react-cookie-notice';
 ```
 
 Usage:
