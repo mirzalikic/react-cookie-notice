@@ -3,6 +3,15 @@
 A lightweight and customizable React component for informing users about the use of cookies on your website.
 React Cookie Notice gives you full control over the cookies that will be set by the component.
 
+## Look
+
+![react-cookie-notice](https://raw.githubusercontent.com/mirzalikic/react-cookie-notice/github-pages/images/react-cookie-notice-1.png)
+![react-cookie-notice](https://raw.githubusercontent.com/mirzalikic/react-cookie-notice/github-pages/images/react-cookie-notice-2.png)
+
+## Demo
+
+https://mirzalikic.github.io/react-cookie-notice/
+
 ## Installation
 
 ```shell
