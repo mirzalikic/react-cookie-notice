@@ -20,6 +20,10 @@
     "dependencies": {
         "js-cookie": "^2.2.1"
     },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mirzalikic/react-cookie-notice.git"
+    },
     "peerDependencies": {
         "react": "^16.13.1"
     },
