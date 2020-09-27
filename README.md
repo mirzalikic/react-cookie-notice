@@ -126,3 +126,7 @@ Text that is displayed next to the checkbox.
 
 `text`
 Description of the cookie. Will be displayed below the title.
+
+## License
+
+MIT
