@@ -1,8 +1,9 @@
 {
     "name": "@mirzalikic/react-cookie-notice",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "A lightweight and customizable React component for informing users about the use of cookies on your website.",
     "main": "./dist/index.js",
+    "types": "./dist/index.d.ts",
     "scripts": {
         "build": "webpack"
     },
@@ -32,6 +33,7 @@
         "@babel/preset-env": "^7.11.5",
         "@babel/preset-react": "^7.10.4",
         "babel-loader": "^8.1.0",
+        "copy-webpack-plugin": "^6.1.1",
         "css-loader": "^4.3.0",
         "react": "^16.13.1",
         "style-loader": "^1.2.1",
