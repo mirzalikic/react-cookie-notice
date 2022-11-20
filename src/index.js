@@ -50,7 +50,7 @@ const CookieNotice = ({
         init: false
     });
 
-    const [availableCookies, setAavailableCookies] = useState(cookies);
+    const [availableCookies, setAavailableCookies] = useState({ cookies: cookies, callback: false });
 
     useEffect(() => {
         // toggle visibity of cookie notice on toggleVisibility prop change
@@ -59,6 +59,12 @@ const CookieNotice = ({
             visible: !state.visible
         }));
     }, [toggleVisibility]);
+
+    useEffect(() => {
+        if (availableCookies.callback) {
+            onSave(availableCookies.cookies);
+        }
+    }, [availableCookies]);
 
     useEffect(() => {
         // execute effect only one time
@@ -73,7 +79,7 @@ const CookieNotice = ({
             };
 
             // find default cookie
-            const defaultCookie = availableCookies.filter((cookie) => cookie.default === true);
+            const defaultCookie = availableCookies.cookies.filter((cookie) => cookie.default === true);
 
             // check if default cookie is available
             if (defaultCookie.length > 0) {
@@ -94,10 +100,13 @@ const CookieNotice = ({
                     }));
 
                     setAavailableCookies((state) => {
-                        return state.map((value) => {
-                            value = { ...value, checked: getCookie(value.name) === 'true' };
-                            return value;
-                        });
+                        return {
+                            cookies: state.cookies.map((value) => {
+                                value = { ...value, checked: getCookie(value.name) === 'true' };
+                                return value;
+                            }),
+                            callback: false
+                        };
                     });
                 }
 
@@ -107,7 +116,7 @@ const CookieNotice = ({
                 }));
 
                 // get current values from available cookies
-                const availableCookiesOnInit = availableCookies.map((value) => {
+                const availableCookiesOnInit = availableCookies.cookies.map((value) => {
                     value = { ...value, checked: getCookie(value.name) === 'true' };
                     return value;
                 });
@@ -138,7 +147,7 @@ const CookieNotice = ({
     };
 
     const savePreferences = () => {
-        availableCookies.forEach((value) => {
+        availableCookies.cookies.forEach((value) => {
             if (value.checked === true || value.editable === false) {
                 // set checked cookies or cookies that are not editable. not editable cookie are checked.
                 setCookie(value.name, true);
@@ -154,21 +163,19 @@ const CookieNotice = ({
             visible: false
         }));
 
-        onSave(availableCookies);
+        onSave(availableCookies.cookies);
     };
 
     const acceptAllCookies = () => {
         // set all cookies and mark all cookies as checked
         setAavailableCookies((state) => {
-            const newAvailableCookies = state.map((value) => {
+            const newAvailableCookies = state.cookies.map((value) => {
                 setCookie(value.name, true);
                 value = { ...value, checked: true };
                 return value;
             });
 
-            onSave(newAvailableCookies);
-
-            return newAvailableCookies;
+            return { cookies: newAvailableCookies, callback: true };
         });
 
         setOptions((state) => ({
@@ -179,14 +186,17 @@ const CookieNotice = ({
 
     const checkboxHandler = (name) => {
         setAavailableCookies((state) => {
-            return state.map((value) => {
-                if (value.editable === true && value.name === name) {
-                    value = { ...value, checked: !value.checked };
+            return {
+                cookies: state.cookies.map((value) => {
+                    if (value.editable === true && value.name === name) {
+                        value = { ...value, checked: !value.checked };
 
+                        return value;
+                    }
                     return value;
-                }
-                return value;
-            });
+                }),
+                callback: false
+            };
         });
     };
 
@@ -208,7 +218,7 @@ const CookieNotice = ({
                 {children}
                 {options.showCookies && (
                     <ul style={styles.cookies}>
-                        {availableCookies.map((value, index) => {
+                        {availableCookies.cookies.map((value, index) => {
                             return (
                                 <li style={styles.cookie} key={index}>
                                     <label>
@@ -232,32 +242,17 @@ const CookieNotice = ({
                 <div className={buttonsClass} style={styles.buttons}>
                     {showCookiePreferences ? (
                         options.showCookies ? (
-                            <button
-                                className={buttonSecondaryClass}
-                                style={styles.buttonSecondary}
-                                onClick={() => {
-                                    savePreferences();
-                                }}>
+                            <button className={buttonSecondaryClass} style={styles.buttonSecondary} onClick={savePreferences}>
                                 {savePreferencesButtonText}
                             </button>
                         ) : (
-                            <button
-                                className={buttonSecondaryClass}
-                                style={styles.buttonSecondary}
-                                onClick={() => {
-                                    toggleShowCookies();
-                                }}>
+                            <button className={buttonSecondaryClass} style={styles.buttonSecondary} onClick={toggleShowCookies}>
                                 {preferencesButtonText}
                             </button>
                         )
                     ) : null}
 
-                    <button
-                        className={buttonPrimaryClass}
-                        style={styles.buttonPrimary}
-                        onClick={() => {
-                            acceptAllCookies();
-                        }}>
+                    <button className={buttonPrimaryClass} style={styles.buttonPrimary} onClick={acceptAllCookies}>
                         {acceptAllButtonText}
                     </button>
                 </div>
