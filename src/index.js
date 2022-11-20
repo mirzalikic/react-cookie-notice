@@ -158,25 +158,24 @@ const CookieNotice = ({
     };
 
     const acceptAllCookies = () => {
-        // set all cookies and mark all cookies as checked
+        availableCookies.forEach((value) => {
+            setCookie(value.name, true);
+        });
+
         setAavailableCookies((state) => {
-            const newAvailableCookies = state.map((value) => {
-                setCookie(value.name, true);
+            return state.map((value) => {
                 value = { ...value, checked: true };
                 return value;
             });
-
-            onSave(newAvailableCookies);
-
-            return newAvailableCookies;
         });
 
         setOptions((state) => ({
             ...state,
             visible: false
         }));
-    };
 
+        onSave(availableCookies);
+    };
     const checkboxHandler = (name) => {
         setAavailableCookies((state) => {
             return state.map((value) => {
